@@ -18,7 +18,7 @@ class FileDB {
     }
 
     public function save() {
-        array_to_file($this->data, $this->file_name);
+        return array_to_file($this->data, $this->file_name);
     }
 
 }
