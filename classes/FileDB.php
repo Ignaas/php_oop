@@ -10,7 +10,7 @@ class FileDB {
     }
 
     public function load() {
-        $this->data = file_to_array(file_name);
+        $this->data = file_to_array($this->file_name);
     }
 
 }
