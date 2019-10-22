@@ -15,6 +15,7 @@ class FileDB {
 
     public function setData($data_array) {
         $this->data = $data_array;
+        return $data_array;
     }
 
 }
