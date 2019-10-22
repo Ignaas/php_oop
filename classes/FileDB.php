@@ -15,7 +15,10 @@ class FileDB {
 
     public function setData($data_array) {
         $this->data = $data_array;
-        return $data_array;
+    }
+
+    public function save() {
+        array_to_file($this->data, $this->file_name);
     }
 
 }
