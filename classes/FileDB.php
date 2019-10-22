@@ -13,4 +13,8 @@ class FileDB {
         $this->data = file_to_array($this->file_name);
     }
 
+    public function setData($data_array) {
+        $this->data = $data_array;
+    }
+
 }
