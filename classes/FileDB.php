@@ -44,12 +44,12 @@ class FileDB {
     }
 
     public function createTable($table_name) {
-        if ($this->tableExists($table_name)) {
-            return false;
-        } else {
+        if (!$this->tableExists($table_name)) {
             $this->data[$table_name] = [];
 
             return true;
+        } else {
+            return false;
         }
     }
 
