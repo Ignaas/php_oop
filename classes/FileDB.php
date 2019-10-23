@@ -75,6 +75,7 @@ class FileDB {
         if ($row_id) {
             if (!$this->tableExists($table_name)) {
                 $this->data[$table_name] = [$row_id => $row];
+                
                 return $row_id;
             }
 
