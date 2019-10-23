@@ -54,11 +54,21 @@ class FileDB {
     }
 
     public function tableExists($table_name) {
-        return $this->data[$table_name] ? true : false;
+        return isset($this->data[$table_name]) ? true : false;
     }
 
     public function dropTable($table_name) {
         unset($this->data[$table_name]);
+    }
+    
+    public function truncateTable($table_name){
+        if ($this->tableExists($table_name)){
+            $this->data[$table_name] = [];
+            
+            return true;
+        }
+        
+        return false;
     }
 
 }
