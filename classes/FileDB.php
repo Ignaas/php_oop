@@ -60,15 +60,28 @@ class FileDB {
     public function dropTable($table_name) {
         unset($this->data[$table_name]);
     }
-    
-    public function truncateTable($table_name){
-        if ($this->tableExists($table_name)){
+
+    public function truncateTable($table_name) {
+        if ($this->tableExists($table_name)) {
             $this->data[$table_name] = [];
-            
+
             return true;
         }
-        
+
         return false;
+    }
+
+    public function insertRow($table_name, $row, $row_id = null) {
+        if ($row_id) {
+            if (!$this->tableExists($table_name)) {
+                $this->data[$table_name] = [$row_id => $row];
+                return $row_id;
+            }
+
+            return false;
+        } else {
+            $this->data[$table_name][] = $row;
+        }
     }
 
 }
