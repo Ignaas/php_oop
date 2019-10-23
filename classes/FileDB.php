@@ -54,7 +54,12 @@ class FileDB {
     }
 
     public function tableExists($table_name) {
-        return array_key_exists($table_name, $this->data);
+        if (isset($this->data[$table_name])) {
+
+            return true;
+        }
+
+        return false;
     }
 
 }
