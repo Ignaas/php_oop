@@ -9,5 +9,4 @@ $db->save();
 $db->load();
 $db->addRow('guminukai', ['velniai', 'rūgštūs', 'guminukai']);
 $db->replaceRow('elektronika', 1, 'nebeveikiantis kompiuteris');
-$db->createTable('table?');
 var_dump($db);
