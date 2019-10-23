@@ -49,11 +49,16 @@ class FileDB {
 
             return true;
         }
+
         return false;
     }
 
     public function tableExists($table_name) {
         return $this->data[$table_name] ? true : false;
+    }
+
+    public function dropTable($table_name) {
+        unset($this->data[$table_name]);
     }
 
 }
