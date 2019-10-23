@@ -48,10 +48,13 @@ class FileDB {
             $this->data[$table_name] = [];
 
             return true;
-        } else {
-
-            return false;
         }
+
+        return false;
+    }
+
+    public function tableExists($table_name) {
+        return array_key_exists($table_name, $this->data);
     }
 
 }
